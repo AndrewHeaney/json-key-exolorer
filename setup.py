@@ -7,7 +7,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='jkx',
-    version='1.0.2',
+    version='1.0.3',
     license='MIT',
     author="Andrew Heaney",
     author_email='heaneyandrew11@gmail.com',
