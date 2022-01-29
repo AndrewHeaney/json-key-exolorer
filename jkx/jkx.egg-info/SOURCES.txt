@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+jkx/jkx.egg-info/PKG-INFO
+jkx/jkx.egg-info/SOURCES.txt
+jkx/jkx.egg-info/dependency_links.txt
+jkx/jkx.egg-info/entry_points.txt
+jkx/jkx.egg-info/requires.txt
+jkx/jkx.egg-info/top_level.txt

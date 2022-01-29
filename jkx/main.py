@@ -1,7 +1,9 @@
-from operator import index
 import sys
 import inquirer
 import json
+import os
+
+os.system('cls' if os.name == 'nt' else 'clear')
 
 f = open(sys.argv[1])
 data = json.load(f)
@@ -17,12 +19,11 @@ def gen_array_keys(array):
 
 def explore_json(json_data):
   keys = []
-
   if (type(json_data) == list):
     keys = gen_array_keys(json_data)
   else:
-    for key in json_data:
-      keys.append(key)
+    for key, value in json_data.items():
+      keys.append(key + ' (' + str(type(value)).split("'")[1] + ')')
 
   questions = [
       inquirer.List('key',
@@ -32,7 +33,11 @@ def explore_json(json_data):
     ]
 
   answer = inquirer.prompt(questions)
-  next_key = answer['key']
+  if (type(answer['key']) == str):
+    next_key = answer['key'].split(' ')[0]
+  else:
+    next_key = answer['key']
+
   nodes.append(next_key)
 
   print(gen_path())
@@ -46,4 +51,8 @@ def gen_path():
     path += str(node) + '/'
   return path
 
-explore_json(data)
+def start():
+  explore_json(data)
+
+if __name__ == "__main__":
+   start()
