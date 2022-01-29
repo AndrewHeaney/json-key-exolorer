@@ -1,3 +1,0 @@
-[console_scripts]
-jkx = jkx.main:start
-
