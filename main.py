@@ -34,6 +34,8 @@ def explore_json(json_data):
   answer = inquirer.prompt(questions)
   next_key = answer['key']
   nodes.append(next_key)
+
+  print(gen_path())
   
   if (type(json_data[next_key]) != str):
     explore_json(json_data[next_key])
@@ -45,4 +47,3 @@ def gen_path():
   return path
 
 explore_json(data)
-print(gen_path())
