@@ -2,10 +2,20 @@ import sys
 import inquirer
 import json
 import os
+import argparse
 
 os.system('cls' if os.name == 'nt' else 'clear')
 
-f = open(sys.argv[1])
+
+parser = argparse.ArgumentParser(
+  prog='jkx', 
+  description='Select which JSON file to explore',
+  epilog='Example: jkx openapi.json'
+)
+parser.add_argument('-f', action="store", dest="file")
+args = parser.parse_args()
+
+f = open(args.file)
 data = json.load(f)
 
 nodes = []
