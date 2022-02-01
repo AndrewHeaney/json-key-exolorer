@@ -15,5 +15,27 @@ pip install jkx
 ## Usage
 
 ```
-jkx file.json
+jkx -f file.json
+```
+
+To print the JSON path in different formats, pass the following flags:
+
+### JavaScript -js
+
+```
+jkx -f file.json -js
+
+Example Output:
+---------------
+Path = data.servers[1].variables.region.enum[4]
+```
+
+### Python -py
+
+```
+jkx -f file.json -py
+
+Example Output:
+---------------
+Path = data['servers'][1]['variables']['region']['enum'][4]
 ```
