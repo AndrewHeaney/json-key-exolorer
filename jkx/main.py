@@ -50,11 +50,8 @@ def explore_json(json_data):
     ]
 
   answer = inquirer.prompt(questions)
-  if (type(answer['key']) == str):
-    next_key = answer['key'].split(' ')[0]
-  else:
-    next_key = answer['key']
-
+ 
+  next_key = answer['key'].split(' ')[0]
   nodes.append(next_key)
 
 # Handle flags
